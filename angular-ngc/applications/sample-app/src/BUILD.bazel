@@ -1,19 +1,19 @@
-package(default_visibility = ["//:__subpackages__"])
+# package(default_visibility = ["//:__subpackages__"])
 
-filegroup(
-    name = "umd",
-    srcs = [
-        "//tools/libs:@ant-design/colors__umd",
-        "//tools/libs:date-fns/add_months__umd",
-        "//tools/libs:date-fns/add_years__umd",
-        "//tools/libs:date-fns/format__umd",
-        "//tools/libs:date-fns/get_iso_week__umd",
-        "//tools/libs:date-fns/parse__umd",
-        "//tools/libs:date-fns/set_day__umd",
-        "//tools/libs:date-fns/set_month__umd",
-        "//tools/libs:rxjs/operators__umd",
-        "//tools/libs:rxjs/testing__umd",
-        "@npm//date-fns:date-fns__umd",
-        "@npm//rxjs:rxjs.umd.js",
-    ],
-)
+# filegroup(
+#     name = "umd",
+#     srcs = [
+#         "//tools/libs:@ant-design/colors__umd",
+#         "//tools/libs:date-fns/add_months__umd",
+#         "//tools/libs:date-fns/add_years__umd",
+#         "//tools/libs:date-fns/format__umd",
+#         "//tools/libs:date-fns/get_iso_week__umd",
+#         "//tools/libs:date-fns/parse__umd",
+#         "//tools/libs:date-fns/set_day__umd",
+#         "//tools/libs:date-fns/set_month__umd",
+#         "//tools/libs:rxjs/operators__umd",
+#         "//tools/libs:rxjs/testing__umd",
+#         "@npm//date-fns:date-fns__umd",
+#         "@npm//rxjs:rxjs.umd.js",
+#     ],
+# )

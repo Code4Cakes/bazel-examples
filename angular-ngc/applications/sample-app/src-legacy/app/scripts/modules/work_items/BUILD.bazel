@@ -1,19 +1,19 @@
-package(default_visibility = ["//:__subpackages__"])
+# package(default_visibility = ["//:__subpackages__"])
 
-load("@npm//@bazel/typescript:index.bzl", "ts_library")
+# load("@npm//@bazel/typescript:index.bzl", "ts_library")
 
-ts_library(
-    name = "work_items",
-    srcs = glob(
-        include = ["*.ts"],
-        exclude = ["spec.ts"],
-    ),
-    deps = [
-        "//typings",
-        "@npm//@types/node",
-        "@npm//angular",
-    ],
-)
+# ts_library(
+#     name = "work_items",
+#     srcs = glob(
+#         include = ["*.ts"],
+#         exclude = ["spec.ts"],
+#     ),
+#     deps = [
+#         "//typings",
+#         "@npm//@types/node",
+#         "@npm//angular",
+#     ],
+# )
 
 # ts_library(
 #     name = "tests",

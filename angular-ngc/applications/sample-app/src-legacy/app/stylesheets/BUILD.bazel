@@ -1,16 +1,16 @@
-package(default_visibility = ["//:__subpackages__"])
+# package(default_visibility = ["//:__subpackages__"])
 
-load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+# load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
 
-sass_library(
-    name = "sass_lib",
-    srcs = [
-        "//tools/libs:@medicine-cabinet__sass_lib",
-    ],
-)
+# sass_library(
+#     name = "sass_lib",
+#     srcs = [
+#         "//tools/libs:@medicine-cabinet__sass_lib",
+#     ],
+# )
 
-sass_binary(
-    name = "app_css_scss",
-    src = "app.css.scss",
-    deps = [":sass_lib"],
-)
+# sass_binary(
+#     name = "app_css_scss",
+#     src = "app.css.scss",
+#     deps = [":sass_lib"],
+# )
