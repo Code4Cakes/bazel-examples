@@ -1,0 +1,41 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+ts_library(
+    name = "home",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["spec.ts"],
+    ),
+    deps = [
+        "//projects/sample-app/src-legacy/app/scripts/modules/work_items",
+        "//typings",
+        "@npm//@angular/router",
+        "@npm//@angular/upgrade",
+        "@npm//@medicine-cabinet/legacy",
+        "@npm//@types/node",
+        "@npm//angular",
+    ],
+)
+
+# ts_library(
+#     name = "tests",
+#     testonly = 1,
+#     srcs = glob(["*spec.ts"]),
+#     deps = [
+#       ":home",
+#       "@npm//@types/jasmine",
+#       "//packages/testing",
+#     ]
+# )
+#
+# karma_web_test(
+#     name = "test",
+#     deps = [
+#       ":tests",
+#       "@npm//angular:angular__umd",
+#       "@npm//angular-mocks:angular-mocks__umd",
+#       "//projects/sample-app/src-legacy:umd",
+#     ],
+# )

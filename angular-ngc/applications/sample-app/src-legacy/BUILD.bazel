@@ -1,0 +1,31 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+ts_library(
+    name = "src-legacy",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["spec.ts"],
+    ),
+    deps = [
+        "//projects/sample-app/src-legacy/app",
+        # "//projects/sample-app/src-legacy/spec",
+    ],
+)
+
+filegroup(
+    name = "umd",
+    srcs = [
+        "//tools/libs:@uirouter/angularjs__umd",
+        "//tools/libs/@medicine-cabinet:modules/buttons__umd",
+        "//tools/libs/@medicine-cabinet:modules/directives/datepicker__umd",
+        "//tools/libs/@medicine-cabinet:modules/globals__umd",
+        "//tools/libs/@medicine-cabinet:modules/model__umd",
+        "@npm//angular:angular.umd.js",
+        "@npm//angular-route:angular-route.umd.js",
+        "@npm//angular-ui-bootstrap:angular-ui-bootstrap.umd.js",
+        "@npm//jquery:jquery.umd.js",
+        "@npm//lodash.memoize:lodash.memoize.umd.js",
+    ],
+)

@@ -1,0 +1,90 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+COMMON_DEPS = [
+    "@npm//@angular/core",
+    "@npm//@angular/common",
+    "@npm//@angular/router",
+    "@npm//@angular/material",
+    "//projects/sample-app/src/app/infrastructure:actions",
+]
+
+ts_library(
+    name = "interface",
+    srcs = [
+        "todo.interface.ts",
+    ],
+)
+
+ts_library(
+    name = "actions",
+    srcs = [
+        "todo.actions.ts",
+    ],
+)
+
+ng_module(
+    name = "reducer",
+    srcs = [
+        "todo.reducer.ts",
+    ],
+    deps = [
+        ":actions",
+        ":interface",
+        "//projects/sample-app/src/app/infrastructure:actions",
+    ],
+)
+
+ng_module(
+    name = "todo",
+    srcs = [
+        "todo.component.ts",
+        "todo.module.ts",
+    ],
+    deps = COMMON_DEPS + [
+        "@npm//@angular/forms",
+        ":effects",
+        ":reducer",
+        ":interface",
+    ],
+)
+
+ng_module(
+    name = "effects",
+    srcs = [
+        "todo.effects.ts",
+    ],
+    deps = COMMON_DEPS + [
+        ":interface",
+        ":actions",
+        "@npm//@ngrx/effects",
+        "@npm//rxjs",
+    ],
+)
+
+# ts_library(
+#     name = "tests",
+#     testonly = 1,
+#     srcs = glob(["**/*.spec.ts"]),
+#     deps = COMMON_DEPS + [
+#         ":interface",
+#         ":reducer",
+#         ":effects",
+#         ":actions",
+#         "@npm//@types/jasmine",
+#         "@npm//@ngrx/store",
+#         "@npm//@ngrx/effects",
+#         "@npm//rxjs",
+#     ]
+# )
+#
+# karma_web_test(
+#     name = "test",
+#     deps = [
+#         ":tests",
+#         "@npm//@ant-design/icons-angular",
+#         "//tools/libs:@ant-design/colors__umd",
+#     ],
+# )

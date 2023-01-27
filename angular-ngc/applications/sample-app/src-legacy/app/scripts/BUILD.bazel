@@ -1,0 +1,27 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+
+ts_library(
+    name = "scripts",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["spec.ts"],
+    ),
+    deps = [
+        "//projects/sample-app/src-legacy/app/scripts/pages/admin",
+        "//projects/sample-app/src-legacy/app/scripts/pages/home",
+        "//projects/sample-app/src-legacy/app/scripts/pages/settings",
+        "//projects/sample-app/src-legacy/app/scripts/pages/user",
+        "@npm//@angular/common",
+        "@npm//@angular/upgrade",
+        "@npm//@medicine-cabinet/legacy",
+        "@npm//@types/angular",
+        "@npm//@types/jquery",
+        "@npm//@types/node",
+        "@npm//@uirouter/angularjs",
+        "@npm//angular",
+        "@npm//jquery",
+        "@npm//lodash.memoize",
+    ],
+)

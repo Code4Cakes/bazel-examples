@@ -1,0 +1,49 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
+
+COMMON_DEPS = [
+    "@npm//@angular/core",
+    "@npm//@angular/common",
+]
+
+sass_binary(
+    name = "styles",
+    src = "app.component.scss",
+    include_paths = [
+        "//packages/components/src/app/theme:variables_scss"
+    ],
+)
+
+ng_module(
+    name = "app",
+    srcs = [
+        "app.component.ts",
+        "app.module.ts",
+        "app-routing.module.ts",
+    ],
+    assets = [":styles"],
+    deps = COMMON_DEPS + [
+        "@npm//angular",
+        "@npm//@angular/upgrade",
+        "@npm//@angular/platform-browser",
+        "@npm//@angular/router",
+        "@npm//@angular/material",
+        "@npm//@types/angular",
+        "@npm//@ngrx/effects",
+        "@npm//@ngrx/store",
+        "@npm//@ngrx/store-devtools",
+        "@npm//rxjs",
+        "//projects/sample-app/src-legacy/app/scripts",
+        "//projects/medicine-cabinet/v2/providers",
+        "//packages/environments:service",
+        "//packages/components/src/app/intf-theme",
+        "//packages/feature-flags",
+        "//projects/sample-app/src/app/dashboard",
+        "//projects/sample-app/src/app/home",
+        "//projects/sample-app/src/app/todo",
+        "//projects/sample-app/src/app/todo:effects",
+        "//projects/sample-app/src/app/todo:reducer",
+    ],
+)

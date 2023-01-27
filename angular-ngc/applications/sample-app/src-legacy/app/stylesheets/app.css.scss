@@ -1,0 +1,44 @@
+@import 'external/npm/node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+
+// Legacy Angular Bootstrap imports
+//
+// BootStrap Core variables and mixins
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+
+// Bootstrap Reset and dependencies
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print';
+
+// Bootstrap Core CSS
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid';
+
+// Bootstrap Components
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pagination';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pager';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel';
+@import 'external/npm/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities';
+
+// Bourbon import
+@import 'external/npm/node_modules/node-bourbon/assets/stylesheets/_bourbon.scss';
+
+// Internal Library files
+@import 'external/npm/node_modules/@medicine-cabinet/legacy/styleguide/stylesheets/lib/_constants.css.scss';
+@import 'external/npm/node_modules/@medicine-cabinet/legacy/styleguide/stylesheets/lib/_mixins.css.scss';
+
+// Legacy medicine-cabinet styles
+@import 'external/npm/node_modules/@medicine-cabinet/legacy/styleguide/stylesheets/helpers/_helpers.css.scss';
+@import 'external/npm/node_modules/@medicine-cabinet/legacy/styleguide/stylesheets/layout/_layout.css.scss';
+@import 'external/npm/node_modules/@medicine-cabinet/legacy/styleguide/stylesheets/components/_components.css.scss';
+@import 'external/npm/node_modules/@medicine-cabinet/legacy/styleguide/stylesheets/directives/_directives.css.scss';
+@import 'external/npm/node_modules/@medicine-cabinet/legacy/styleguide/stylesheets/sections/_sections.css.scss';

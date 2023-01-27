@@ -1,0 +1,32 @@
+@import '../../../../packages/components/src/app/theme/new-theme/variables';
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  background: $primary-lighter;
+}
+
+.sider-menu {
+  background: $gray-lightest;
+}
+
+.topbar-dropdown {
+  font-size: 16px;
+  color: $white;
+}
+
+.topbar-menu {
+  font-weight: 100;
+  color: $white;
+}
+
+.layout-container {
+  height: 100%;
+}
+
+.sidenav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 180px;
+}
