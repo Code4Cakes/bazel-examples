@@ -65,6 +65,14 @@ importers:
       '@ngc-example/common': link:../../packages/common
       '@ngc-example/lib-a': link:../../packages/lib-a
 
+  applications/sample-app:
+    specifiers:
+      '@ngc-example/common': workspace:*
+      '@ngc-example/lib-a': workspace:*
+    dependencies:
+      '@ngc-example/common': link:../../packages/common
+      '@ngc-example/lib-a': link:../../packages/lib-a
+
   packages/common:
     specifiers: {}
 
