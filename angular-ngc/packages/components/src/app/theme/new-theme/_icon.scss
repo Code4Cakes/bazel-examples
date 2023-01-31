@@ -1,0 +1,27 @@
+@import './axiom/styles/variables';
+
+@mixin make-theme-icon {
+  .anticon {
+    vertical-align: 0.09em;
+  }
+}
+
+.info-icon {
+  color: $color-info;
+}
+
+.primary-icon {
+ color: $color-primary;
+}
+
+.secondary-icon {
+  color: $color-accent;
+}
+
+.material-icons {
+  &.help-icon {
+    font-size: 16px ;
+    color: $color-info;
+    line-height: 1.3 !important;
+  }
+}

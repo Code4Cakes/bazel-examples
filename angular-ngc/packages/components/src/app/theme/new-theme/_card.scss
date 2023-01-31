@@ -1,0 +1,92 @@
+@import 'variables';
+@import 'typography';
+@import './axiom/styles/variables';
+
+@mixin make-theme-card {
+  .mat-card {
+    border: 1px solid $white-lightest;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .mat-card.nav-card {
+    border: 2px solid $color-background-sheets;
+    height: 196px;
+    width: 400px;
+    margin: 20px;
+    padding-right: 8px;
+    padding-top: 10px;
+    border-radius: 4px;
+    font-weight: normal;
+    background-color: $color-background-sheets;
+    box-shadow: $elevation-02-dp-shadow;
+
+    .mat-card-header {
+      color: $color-gray-10;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 0 8px 0;
+
+      .mat-card-header-text {
+        margin: 6px 0 0 0;
+        display: flex;
+        align-items: center;
+
+        .mat-card-title {
+          font-size: 3.4rem;
+          font-weight: normal;
+          margin-bottom: 0;
+        }
+      }
+
+      .icon-hover {
+        border-radius: 500px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-size: 1.3em;
+        margin-right: 8px;
+        max-height: 55px;
+        display: flex;
+        align-items: center;
+
+        .mat-icon {
+          color: $color-orange-50;
+          font-size: 34px;
+          height: 34px;
+          width: 34px;
+        }
+      }
+    }
+
+    .mat-card-content {
+      font-size: 1.6rem;
+      color: $color-gray-10;
+      max-width: 282px;
+      line-height: 2.4rem;
+    }
+  }
+
+  .card-anchor {
+    &:focus, &:hover {
+      text-decoration: none;
+    .nav-card{
+        border: 2px solid $color-orange-50;
+
+        .mat-card-header {
+          .icon-hover {
+            background-color: $color-orange-90;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-card-body {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+

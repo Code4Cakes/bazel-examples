@@ -1,0 +1,38 @@
+@import 'variables';
+
+@mixin buildSpacerUtility(
+  $property-prefix,
+  $property,
+  $spacer-name,
+  $spacer-value,
+  $position-key,
+  $position-symbol
+) {
+  .#{$property-prefix}-#{$position-symbol}#{$spacer-name} {
+    #{$property}#{$position-key}: $spacer-value;
+  }
+}
+
+@mixin buildSpacersUtility($property-prefix, $property) {
+  @each $spacer-name in map-keys($spacers) {
+    $spacer-value: map-get($spacers, $spacer-name);
+
+    @each $position-key in map-keys($positions) {
+      $position-symbol: map-get($positions, $position-key);
+
+      @include buildSpacerUtility(
+        $property-prefix,
+        $property,
+        $spacer-name,
+        $spacer-value,
+        $position-key,
+        $position-symbol
+      );
+    }
+  }
+}
+
+@mixin make-theme-spacers() {
+  @include buildSpacersUtility(p, padding);
+  @include buildSpacersUtility(m, margin);
+}

@@ -1,0 +1,119 @@
+// -------- import official less file -----------
+@import "external/npm/node_modules/ng-zorro-antd/ng-zorro-antd.less";
+
+@import "../app/theme/colors/colors";
+
+// REFERENCE: packages/components/src/app/themes/colors/color.ts
+// -------- override less var -----------
+@primary-color: @primary;
+
+// Grid system
+@grid-columns: 12;
+@grid-gutter-width: 24;
+
+// Media queries breakpoints
+// Extra small screen / phone
+@screen-xs: 640px;
+@screen-xs-min: @screen-xs;
+
+// Small screen / tablet
+@screen-sm: 640px;
+@screen-sm-min: @screen-sm;
+
+// Medium screen / desktop
+@screen-md: 940px;
+@screen-md-min: @screen-md;
+
+// Large screen / wide desktop
+@screen-lg: 1170px;
+@screen-lg-min: @screen-lg;
+
+// Extra large screen / full hd
+@screen-xl: 1440px;
+@screen-xl-min: @screen-xl;
+
+// Extra extra large screen / large desktop
+@screen-xxl: 1440px;
+@screen-xxl-min: @screen-xxl;
+
+@font-family: 'Roboto', sans-serif;
+
+// Buttons
+@btn-primary-color: @white;
+@btn-primary-bg: @primary;
+
+@btn-default-color: @primary-darker;
+@btn-default-bg: @white;
+@btn-default-border: @primary-darker;
+
+@btn-danger-color: @white;
+@btn-danger-bg: @red;
+@btn-danger-border: @red;
+
+@btn-disable-color: @gray;
+@btn-disable-bg: @gray-lightest;
+@btn-disable-border: @gray;
+
+// Input
+// ---
+@input-placeholder-color: @gray;
+@input-icon-color: red;
+@input-color: @gray-darkest;
+@input-border-color: @gray;
+@input-bg: @white;
+@input-hover-border-color: @primary;
+@input-disabled-bg: @gray-lightest;
+
+// Alert
+// ---
+@alert-success-border-color: @green-lighter;
+@alert-success-bg-color: @green-lightest;
+@alert-success-icon-color: @green;
+@alert-error-border-color: @red-lighter;
+@alert-error-bg-color: @red-lightest;
+@alert-error-icon-color: @red;
+
+
+// Tabs
+// ---
+@tabs-title-font-size: 16px;
+@tabs-ink-bar-color: @primary-darker;
+@tabs-highlight-color: @primary-darker;
+@tabs-hover-color: @primary-darker;
+@tabs-active-color: @primary-darker;
+
+// Select
+// ---
+@select-border-color: @gray;
+@select-item-selected-font-weight: 400;
+
+//Table
+// ---
+@table-padding-vertical: 10px;
+@table-padding-horizontal: 24px;
+@table-header-bg: @gray-lightest;
+@table-row-hover-bg: @primary-lightest;
+@table-header-sort-bg: @gray-lightest;
+@table-body-selected-sort-bg: @gray-lightest;
+@table-selected-row-hover-bg: @primary-lightest;
+
+// Pagination
+// ---
+@pagination-font-family: @font-family;
+@pagination-font-weight-active: 400;
+@pagination-item-bg-active: @primary;
+
+// Link
+// ---
+@link-color: @primary;
+@link-hover-color: @primary-darkest;
+@link-active-color: @primary-darkest;
+
+
+// Form
+// ---
+@form-item-label-font-size: 13px;
+
+// Modal
+// ---
+@modal-body-padding: 32px;

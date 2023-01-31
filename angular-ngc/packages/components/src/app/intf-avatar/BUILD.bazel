@@ -1,0 +1,36 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+
+sass_library(
+    name = "sass_lib",
+    srcs = [
+        "//packages/components/src/app/theme:colors/colors.scss",
+    ],
+)
+
+sass_binary(
+    name = "intf_avatar_component_scss",
+    src = "intf-avatar.component.scss",
+    deps = [":sass_lib"],
+)
+
+ng_module(
+    name = "intf-avatar",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    assets = glob(["*.html"]) + [
+        ":intf_avatar_component_scss",
+    ],
+    module_name = "@intf/components/intf-avatar",
+    deps = [
+        "//packages/components/src/app/theme",
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+        "@npm//date-fns",
+        "@npm//@angular/material"
+    ],
+)

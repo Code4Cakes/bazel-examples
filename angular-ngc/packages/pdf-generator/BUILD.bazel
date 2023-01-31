@@ -1,0 +1,39 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+
+COMMON_DEPS = [
+  "@npm//@angular/core",
+  "@npm//@angular/common",
+]
+
+ng_module(
+  name = "pdf-generator",
+  srcs = [
+    "pdf-generator.module.ts",
+    "pdf-generator.service.ts",
+  ],
+  module_name = "@intf/pdf-generator",
+  deps = COMMON_DEPS + [
+    "//packages/environments:service",
+  ],
+)
+
+ts_library(
+  name = "tests",
+  srcs = glob(["*.spec.ts"]),
+  deps = COMMON_DEPS + [
+    ":pdf-generator",
+    "@npm//@angular/platform-browser",
+    "@npm//@types/jest",
+    "//packages/environments:service",
+  ],
+)
+
+jest_test(
+  name = "test",
+  testonly = 1,
+  data = [":tests"],
+)

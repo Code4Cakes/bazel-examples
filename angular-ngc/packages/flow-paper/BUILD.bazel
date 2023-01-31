@@ -1,0 +1,15 @@
+package(default_visibility = ["//visibility:public"])
+
+_ASSETS = [
+    "dist/js/pdf.min.js",
+    "dist/js/pdf.worker.min.js",
+]
+
+filegroup(
+    name = "assets",
+    srcs = glob([
+        "dist/*.html",
+        "dist/**/*.css",
+        "dist/**/*.txt",
+    ]) + _ASSETS,
+)

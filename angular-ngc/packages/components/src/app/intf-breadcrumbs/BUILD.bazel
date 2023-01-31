@@ -1,0 +1,33 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+
+sass_library(
+    name = "sass_lib",
+    srcs = [
+        "//packages/components/src/app/theme:theme-scss",
+    ],
+)
+
+sass_binary(
+    name = "styles",
+    src = "intf-breadcrumbs.component.scss",
+    deps = [":sass_lib"],
+)
+
+ng_module(
+    name = "intf-breadcrumbs",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    assets = [":styles"],
+    module_name = "@intf/components/intf-breadcrumbs",
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+        "@npm//@angular/material",
+        "@npm//@angular/router",
+    ],
+)

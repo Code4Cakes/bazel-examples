@@ -1,0 +1,31 @@
+@mixin make-theme-flex() {
+  .flex-row {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .flex-column {
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+  }
+
+  .flex-align-items-end {
+    align-items: flex-end;
+  }
+  .flex-align-items-center {
+    align-items: center;
+  }
+
+  .flex-justify-content-end {
+    justify-content: flex-end;
+  }
+
+  .flex-justify-content-start {
+    justify-content: flex-start;
+  }
+}

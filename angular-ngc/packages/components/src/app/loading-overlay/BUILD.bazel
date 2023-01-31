@@ -1,0 +1,28 @@
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+
+package(default_visibility = ["//:__subpackages__"])
+
+COMMON_DEPS = [
+    "@npm//@angular/common",
+    "@npm//@angular/core",
+    "@npm//@angular/material",
+]
+
+sass_binary(
+    name = "styles",
+    src = "loading-overlay.component.scss",
+)
+
+ng_module(
+    name = "loading-overlay",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    assets = [":styles"],
+    module_name = "@intf/components/loading-overlay",
+    deps = COMMON_DEPS + [],
+)

@@ -1,0 +1,30 @@
+@mixin make-theme-expansion-panel() {
+  mat-expansion-panel.expansion-panel-text-only {
+    &,
+    mat-expansion-panel-header,
+    &:not(.mat-expanded) mat-expansion-panel-header:hover,
+    &:not(.mat-expanded) mat-expansion-panel-header:focus {
+      background-color: transparent !important;
+      border: none;
+      box-shadow: none;
+    }
+    mat-expansion-panel-header {
+      &:not(.mat-expanded) span.mat-expansion-indicator {
+        margin-top: -8px;
+      }
+      span.mat-expansion-indicator::after {
+        color: $primary;
+      }
+      mat-panel-title {
+        color: $primary;
+      }
+    }
+    .mat-expansion-panel-body {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      &::-webkit-scrollbar {
+        display: none;  /* Safari and Chrome */
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@keyframes slide-from-right {
+  100% { right: 0; }
+}
+
+.right-dialog {
+  animation-delay: 0.2s;
+  animation: slide-from-right 0.2s forwards;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  min-height: 100vh;
+  position: fixed !important;
+  right: -100vw;
+  top: 0;
+  width: 100vw;
+
+  .mat-dialog-container {
+    border-radius: 0;
+    max-height: 100vh;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    &>* {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .mat-dialog-title {
+      margin-bottom: $spacer-smaller;
+    }
+
+    .mat-dialog-content {
+      max-height: inherit;
+      flex: 1;
+    }
+
+    .mat-dialog-actions {
+      margin-bottom: 0;
+    }
+
+    h1 {
+      font-size: $font-size-500;
+      line-height: 1.5em;
+      margin-top: $spacer-medium;
+    }
+
+    .intf-banner {
+      font-size: $font-size-300;
+    }
+  }
+}

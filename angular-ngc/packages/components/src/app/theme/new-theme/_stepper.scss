@@ -1,0 +1,27 @@
+@import './axiom/styles/variables';
+
+@mixin make-theme-stepper() {
+  mat-step-header {
+    div {
+      &.mat-step-icon {
+        border: 1px solid;
+        &-state-done {
+          border-color: $color-green-30;
+          background-color: $color-green-90;
+          color: $color-green-30;
+        }
+        &-state-number {
+          border-color: $color-gray-7;
+          background-color: $color-gray-2;
+          color: $color-gray-7;
+        }
+        &-selected, &-state-edit {
+          border: 2px solid $color-red-50;
+          background-color: $color-red-90;
+          color: $color-red-30;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+}

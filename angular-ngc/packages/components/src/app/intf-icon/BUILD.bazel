@@ -1,0 +1,17 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+
+ng_module(
+    name = "intf-icon",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    module_name = "@intf/components/intf-icon",
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+        "@npm//ng-zorro-antd",
+    ],
+)

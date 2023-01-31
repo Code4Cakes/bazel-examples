@@ -1,0 +1,13 @@
+@import 'variables';
+@import 'typography';
+
+@mixin make-theme-notification() {
+  .ant-notification-notice-message {
+    color: $white;
+    margin-bottom: 0;
+  }
+
+  .ant-notification-notice-close {
+    color: $white;
+  }
+}

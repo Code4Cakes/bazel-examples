@@ -1,0 +1,81 @@
+@import './axiom/styles/variables';
+
+@mixin make-theme-chip {
+  .mat-chip.mat-standard-chip {
+    background-color: $color-background-chip-info;
+    color: $color-text-chip-info;
+    border: 1px solid $color-border-chip-info;
+    min-height: 0px;
+    padding: 4px 10px;
+    font-weight: normal;
+    height: 30px;
+    font-size: $font-size-chip-default;
+    white-space: nowrap;
+
+    &.mat-small {
+      height: 24px;
+      font-size: $font-size-chip-small;
+
+      .mat-chip-remove {
+        font-size: 16px;
+        margin-right: 0px;
+      }
+    }
+
+    &.mat-medium {
+    }
+
+    &.mat-chip-with-trailing-icon {
+      padding-right: 2px;
+    }
+
+    .mat-chip-remove {
+      color: $color-border-chip-info;
+      opacity: 1;
+      font-size: 22px;
+      margin-left: 4px;
+      margin-right: 4px;
+      line-height: 18px;
+    }
+  }
+
+  .mat-chip.mat-secondary {
+    background-color: $secondary-lightest;
+    color: $secondary-darker;
+    border: 1px solid $secondary;
+
+    .mat-chip-remove {
+      color: $secondary;
+    }
+  }
+
+  .mat-chip.mat-warn {
+    background-color: $red-lightest;
+    color: $red-darkest;
+    border: 1px solid $red;
+
+    .mat-chip-remove {
+      color: $red;
+    }
+  }
+
+  .mat-chip.mat-accent {
+    background-color: $primary-background;
+    color: $primary-darkest;
+    border: 1px solid $primary;
+
+    .mat-chip-remove {
+      color: $primary;
+    }
+  }
+
+  .mat-chip.mat-warn {
+    background-color: $red-lightest;
+    color: $red-darkest;
+    border: 1px solid $red;
+
+    .mat-chip-remove {
+      color: $red;
+    }
+  }
+}

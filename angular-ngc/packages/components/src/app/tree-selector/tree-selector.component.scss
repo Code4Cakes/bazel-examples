@@ -1,0 +1,36 @@
+@import '../../../../../packages/components/src/app/theme/new-theme/variables';
+
+.nested-autocomplete {
+  .mat-option {
+    line-height: 2em;
+    height: 2em;
+  }
+
+  .mat-option-text {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 2em;
+
+    .font-size-smaller {
+      line-height: inherit;
+    }
+  }
+
+  .select-depth-guide {
+    padding-left: 1em;
+  }
+
+  .multi-root-tree .select-depth-guide,
+  .select-depth-guide + .select-depth-guide {
+    border-left: solid 1px $primary;
+  }
+
+  .select-depth-guide,
+  .select-depth-content {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+  }
+}

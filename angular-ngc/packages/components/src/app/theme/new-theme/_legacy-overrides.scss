@@ -1,0 +1,23 @@
+@import './axiom/styles/variables';
+
+@mixin make-theme-legacy-overrides {
+  // These styles are in place specifically to modify med-cab styles.
+  // so we can adhere to current axiom standards and designs.
+  // integrate into new components as upgrades are made.
+  fis-page-header #fis-page-header {
+    margin-left: 10px;
+    border-bottom: none;
+    header h1 {
+      font-weight: normal;
+    };
+  }
+
+  .section-header {
+    font-size: $font-size-600;
+    font-weight: normal;
+  }
+
+  .flex-tile {
+    margin-top: 8px;
+  }
+}

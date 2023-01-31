@@ -1,0 +1,22 @@
+@import 'variables';
+
+@mixin make-theme-alert() {
+  .ant-alert-error {
+    .ant-alert-description {
+      color: $red;
+    }
+
+    .ant-alert-message {
+      color: $red;
+    }
+  }
+
+  .ant-alert-warning {
+    background-color: $purple-lightest;
+    border-color: $purple-lighter;
+
+    .ant-alert-icon {
+      color: $purple;
+    }
+  }
+}

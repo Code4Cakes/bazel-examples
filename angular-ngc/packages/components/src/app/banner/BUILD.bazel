@@ -1,0 +1,56 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+
+COMMON_DEPS = [
+    "@npm//@angular/common",
+    "@npm//@angular/core",
+    "@npm//@angular/material",
+]
+
+sass_library(
+    name = "sass_lib",
+    srcs = [
+        "//packages/components/src/app/theme:new-theme/_variables.scss",
+    ],
+)
+
+sass_binary(
+    name = "banner_component_scss",
+    src = "banner.component.scss",
+    deps = [":sass_lib"],
+)
+
+ng_module(
+    name = "banner",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    assets = glob(["*.html"]) + [
+        ":banner_component_scss",
+    ],
+    module_name = "@intf/components/banner",
+    deps = COMMON_DEPS + [
+        "//packages/components/src/app/theme",
+    ],
+)
+
+ts_library(
+    name = "tests",
+    testonly = 1,
+    srcs = glob(["*.spec.ts"]),
+    deps = COMMON_DEPS + [
+        ":banner",
+        "@npm//@types/jest",
+    ],
+)
+
+jest_test(
+    name = "test",
+    testonly = 1,
+    data = [":tests"],
+)

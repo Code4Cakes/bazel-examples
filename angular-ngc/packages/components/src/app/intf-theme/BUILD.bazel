@@ -1,0 +1,33 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+
+ng_module(
+    name = "intf-theme",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    assets = [":intf_theme_component_scss"],
+    module_name = "@intf/components/intf-theme",
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+        "@npm//@angular/forms",
+        "@npm//ng-zorro-antd",
+    ],
+)
+
+sass_library(
+    name = "sass_lib",
+    srcs = [
+        "//packages/components/src/app/theme:colors/colors.scss",
+    ],
+)
+
+sass_binary(
+    name = "intf_theme_component_scss",
+    src = "intf-theme.component.scss",
+    deps = ["//packages/components/src/app/theme:theme-scss"],
+)

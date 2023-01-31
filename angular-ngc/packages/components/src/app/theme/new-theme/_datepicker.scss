@@ -1,0 +1,41 @@
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected), .cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected), .cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+  background-color: $color-blue-70;
+}
+
+.mat-calendar-body-cell:hover:not(:focus) {
+  outline: none;
+}
+
+.mat-calendar-table-header-divider {
+  display: none;
+}
+
+.mat-menu-panel {
+  &.mat-calendar-menu {
+    min-width: 320px;
+    max-width: 320px;
+    max-height: 100%;
+    overflow: visible;
+  }
+}
+
+.mat-calendar-body-label {
+  visibility: hidden;
+  height: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mat-calendar-table-header th{
+  color: $color-gray-7;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.mat-calendar-body-today.mat-calendar-body-selected {
+  box-shadow: 0 0 0 0;
+}
+
+.mat-datepicker-toggle-default-icon {
+  color: $color-blue-50;
+}

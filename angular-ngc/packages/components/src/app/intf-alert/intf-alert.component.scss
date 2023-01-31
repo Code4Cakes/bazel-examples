@@ -1,0 +1,41 @@
+@import '../theme/new-theme/intf-theme';
+
+.intf-alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  transition: all 0.3s;
+}
+
+.primary {
+  background-color: $primary-lightest;
+}
+
+.primary-icon {
+  color: $primary;
+}
+
+.success {
+  background-color: $green-lightest;
+}
+
+.success-icon {
+  color: $green;
+}
+
+.info {
+  background-color: $purple-lightest;
+}
+
+.info-icon {
+  color: $purple;
+}
+
+.error {
+  background-color: $red-lightest;
+}
+
+.error-icon {
+  color: $red;
+}

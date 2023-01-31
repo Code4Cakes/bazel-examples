@@ -1,0 +1,35 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+
+COMMON_DEPS = [
+    "@npm//@angular/core",
+    "@npm//@sentry/browser",
+]
+
+ts_library(
+    name = "error-handler",
+    srcs = glob(
+        ["**/*.ts"],
+        exclude = ["**/*.spec.ts"],
+    ),
+    module_name = "@intf/error-handler",
+    deps = COMMON_DEPS,
+)
+
+ts_library(
+    name = "tests",
+    testonly = 1,
+    srcs = glob(["**/*.spec.ts"]),
+    deps = COMMON_DEPS + [
+        ":error-handler",
+        "@npm//@types/jasmine",
+    ],
+)
+
+jest_test(
+    name = "test",
+    testonly = 1,
+    data = [":tests"],
+)

@@ -1,0 +1,50 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+
+COMMON_DEPS = [
+    "@npm//@angular/core",
+    "@npm//@angular/common",
+    "@npm//@angular/router",
+]
+
+ng_module(
+    name = "resolver",
+    srcs = ["tenant.resolver.ts"],
+    module_name = "@intf/tenant",
+    deps = COMMON_DEPS + [
+        "//packages/environments:service",
+    ],
+)
+
+ng_module(
+    name = "service",
+    srcs = [
+        "tenant.module.ts",
+        "tenant.service.ts",
+        "tenant-id.service.ts",
+    ],
+    module_name = "@intf/tenant",
+    deps = COMMON_DEPS + [
+    ],
+)
+
+ts_library(
+    name = "tests",
+    srcs = glob(["*.spec.ts"]),
+    deps = COMMON_DEPS + [
+        ":service",
+        ":resolver",
+        "@npm//@angular/platform-browser",
+        "@npm//@types/jasmine",
+        "//packages/environments:service",
+    ],
+)
+
+jest_test(
+    name = "test",
+    testonly = 1,
+    data = [":tests"],
+)

@@ -1,0 +1,67 @@
+<div
+  id="annotationsToolbar"
+  class="flowpaper_toolbarstd_bottom flowpaper_bottomToolbar"
+>
+  <div id="intf-media-viewer-footer-entry"></div>
+
+  <div class="intf-media-viewer-annotations-container">
+    <!-- Uncomment for Highlighting
+    <button data-autocompactwidth="true"
+            class="intf-btn intf-btn-link intf-media-viewer-action flowpaper_bttnHighlight flowpaper_tblabelbutton"
+            onclick="$FlowPaper('intf-media-viewer-flow-paper-entry').setCurrentCursor('AnnotationsCursor',event.clientX)">
+      <i class="fa fa-fw fa-paint-brush"></i>
+    </button>
+    -->
+
+    <button
+      data-autocompactwidth="true"
+      tabindex="0"
+      aria-label="Add Annotation"
+      tooltip="Add Annotation"
+      tooltip-append-to-body="true"
+      class="post-angular-tooltip intf-btn intf-btn-link intf-media-viewer-action flowpaper_bttnComment flowpaper_tblabelbutton"
+      onclick="$FlowPaper('intf-media-viewer-flow-paper-entry').setCurrentCursor('NoteCursor',event.clientX)"
+    >
+      <i class="fa fa-fw fa-pencil-square-o"></i>
+    </button>
+
+    <!-- Uncomment for Strikethrough
+    <button data-autocompactwidth="true"
+            class="intf-btn intf-btn-link intf-media-viewer-action flowpaper_bttnStrikeout flowpaper_tblabelbutton"
+            onclick="$FlowPaper('intf-media-viewer-flow-paper-entry').setCurrentCursor('StrikeoutCursor',event.clientX)">
+      <i class="fa fa-fw fa-strikethrough"></i>
+    </button>
+    -->
+
+    <!-- Uncomment for Drawing
+    <button data-autocompactwidth="true"
+            class="intf-btn intf-btn-link intf-media-viewer-action flowpaper_bttnDraw flowpaper_tblabelbutton"
+            onclick="$FlowPaper('intf-media-viewer-flow-paper-entry').setCurrentCursor('DrawCursor',event.clientX)">
+      <i class="fa fa-fw fa-pencil"></i>
+    </button>
+    -->
+
+    <button
+      data-autocompactwidth="true"
+      tabindex="0"
+      class="post-angular-tooltip intf-btn intf-btn-link intf-media-viewer-action flowpaper_bttnDelete flowpaper_tblabelbutton flowpaper_tbbutton_disabled"
+      aria-label="Delete Annotation"
+      tooltip="Delete Annotation"
+      tooltip-append-to-body="true"
+      onclick="$FlowPaper('intf-media-viewer-flow-paper-entry').removeSelectedMark()"
+    >
+      <i class="fa fa-fw fa-trash"></i>
+    </button>
+
+    <button
+      class="post-angular-tooltip intf-btn intf-btn-link intf-media-viewer-action intf-media-viewer-action-toggle-annotations flowpaper_tbtextbutton_pressed flowpaper_bttnShowHide flowpaper_tblabelbutton"
+      tabindex="0"
+      aria-label="Show/Hide Annotations"
+      tooltip="Show/Hide Annotations"
+      tooltip-append-to-body="true"
+      onclick="if($FlowPaper('intf-media-viewer-flow-paper-entry').setAnnotationsVisible()){jQuery('.flowpaper_bttnShowHide').addClass('flowpaper_tbtextbutton_pressed');}else{jQuery('.flowpaper_bttnShowHide').removeClass('flowpaper_tbtextbutton_pressed')}"
+    >
+      <i class="fa fa-fw fa-eye"></i>
+    </button>
+  </div>
+</div>

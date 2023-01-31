@@ -1,0 +1,10 @@
+@import '../theme/new-theme/intf-theme';
+
+:host {
+  height: 100%;
+}
+
+.intf {
+  height: 100%;
+  @include build-theme();
+}

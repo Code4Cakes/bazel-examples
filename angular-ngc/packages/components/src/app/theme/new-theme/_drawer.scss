@@ -1,0 +1,11 @@
+@import 'variables';
+
+@mixin make-theme-drawer() {
+  .mat-drawer-container {
+    background-color: $gray-lightest;
+  }
+
+  .mat-drawer {
+    background-color: $white;
+  }
+}

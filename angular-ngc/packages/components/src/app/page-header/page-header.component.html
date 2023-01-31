@@ -1,0 +1,17 @@
+<header class="page-header">
+  <div class="left-header">
+    <intf-breadcrumbs [breadcrumbs]="breadcrumbs"></intf-breadcrumbs>
+    <h1
+      [class.push-bottom-xs]="!!pageSubtitle"
+      attr.aria-label="Page Title {{ pageTitle }}"
+    >
+      {{ pageTitle }}
+    </h1>
+    <h2 *ngIf="pageSubtitle">
+      {{ pageSubtitle }}
+    </h2>
+  </div>
+  <div class="right-header push-top">
+    <ng-content select=".page-header-button-container"></ng-content>
+  </div>
+</header>

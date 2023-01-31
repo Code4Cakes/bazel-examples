@@ -1,0 +1,116 @@
+@import 'variables';
+@import 'typography';
+
+@mixin make-theme-input() {
+  .ant-input-lg {
+    @include body-medium;
+  }
+
+  .ant-input {
+    @include body-medium;
+  }
+
+  .ant-input-suffix {
+    .ant-btn-default {
+      border: none;
+      background-color: transparent;
+
+      &:hover {
+        color: $primary-lighter !important;
+        background-color: transparent !important;
+      }
+
+      &:focus,
+      &:active {
+        color: $primary-darker !important;
+        background-color: transparent !important;
+        outline: solid $primary-darker;
+      }
+    }
+  }
+
+  .ant-input-sm {
+    @include body-small;
+  }
+
+  span.required:after {
+    color: $coral !important;
+    content: ' *';
+  }
+
+  .mat-form-field-infix {
+    padding: 9px 0 !important;
+    border: 0 !important;
+  }
+
+  .mat-form-field-appearance-outline
+    .mat-form-field-outline-thick
+    .mat-form-field-outline-start,
+  .mat-form-field-appearance-outline
+    .mat-form-field-outline-thick
+    .mat-form-field-outline-end,
+  .mat-form-field-appearance-outline
+    .mat-form-field-outline-thick
+    .mat-form-field-outline-gap {
+    border-width: 2px !important;
+  }
+
+  .mat-form-field-outline-thick {
+    color: $primary-darker;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    top: 0;
+    background-color: #ffffff;
+    color: $gray-darker;
+    border-radius: 2px;
+  }
+
+  .mat-input-element,
+  .mat-select {
+    @include body-medium;
+  }
+
+  .mat-checkbox-label {
+    font-weight: 400;
+  }
+
+  .mat-select-arrow-wrapper {
+    display: flex;
+  }
+
+  // Search bar styles
+  .search-bar .mat-form-field-appearance-outline .mat-form-field-outline {
+    top: 0;
+    background-color: $primary-background;
+    color: $primary;
+    border-radius: 2px;
+  }
+
+  .search-bar input.mat-input-element {
+    height: 18px;
+  }
+
+  .mat-form-field-appearance-outline.read-only-input .mat-form-field-outline {
+    opacity: 0;
+  }
+
+  .mat-form-field-appearance-outline.read-only-input:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    border: 0;
+
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-gap,
+    .mat-form-field-outline-end {
+      border: none;
+    }
+  }
+
+  .read-only-input {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+      .mat-form-field-flex {
+        padding-left: 0;
+      }
+    }
+  }
+}

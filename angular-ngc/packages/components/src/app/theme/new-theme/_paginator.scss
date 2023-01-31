@@ -1,0 +1,8 @@
+@import 'variables';
+
+@mixin make-theme-paginator() {
+  .mat-paginator {
+    background: none;
+    color: $gray-darkest;
+  }
+}

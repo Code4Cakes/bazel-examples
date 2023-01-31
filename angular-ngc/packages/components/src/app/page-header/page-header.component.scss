@@ -1,0 +1,12 @@
+.page-header {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
+  position: relative;
+
+  .right-header {
+    margin-left: auto;
+    text-align: right;
+    min-width: 275px;
+  }
+}

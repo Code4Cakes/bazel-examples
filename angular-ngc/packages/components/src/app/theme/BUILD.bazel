@@ -1,0 +1,41 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+
+sass_binary(
+    name = "colors_scss",
+    src = "colors/colors.scss",
+)
+
+sass_binary(
+    name = "variables_scss",
+    src = "new-theme/_variables.scss",
+)
+
+sass_library(
+    name = "theme-scss",
+    srcs = glob(["new-theme/*.scss"]),
+)
+
+ng_module(
+    name = "theme",
+    srcs = glob(
+        ["**/*.ts"],
+        exclude = ["**/*.spec.ts"],
+    ),
+    assets = glob(["**/*.html"]) + [
+        ":colors_scss",
+        ":variables_scss",
+    ],
+    module_name = "@intf/components/theme",
+    deps = [
+        "@npm//@angular/core",
+        "@npm//@ant-design/icons-angular",
+    ],
+)
+
+exports_files([
+    "styles/intf-theme.scss",
+    "colors/colors.less",
+])

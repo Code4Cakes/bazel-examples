@@ -1,0 +1,24 @@
+@import 'variables';
+@import 'typography';
+
+@mixin make-theme-list() {
+  .ant-list {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+    border-radius: 3px;
+  }
+
+  .ant-list-item {
+    background: $white;
+    padding-left: $spacer-large;
+    padding-right: $spacer-large;
+  }
+
+  .ant-list-item-meta-avatar {
+    align-self: center;
+  }
+
+  .ant-list-item-meta-title {
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+  }
+}

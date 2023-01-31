@@ -1,0 +1,311 @@
+@import 'variables';
+@import 'typography';
+
+@mixin make-theme-button {
+  .mat-button.large,
+  .mat-flat-button.large,
+  .mat-stroked-button.large {
+    height: 40px;
+    padding: 0 15px;
+  }
+
+  .mat-button.link {
+    color: $primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    .mat-button-focus-overlay {
+      background-color: transparent !important;
+    }
+  }
+
+  .ant-btn {
+    transition: none;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    @include body-medium;
+  }
+
+  .ant-btn-lg {
+    @include body-medium;
+  }
+
+  .ant-btn-sm {
+    @include body-small;
+  }
+
+  .ant-btn-primary:enabled {
+    &:hover {
+      background-color: $primary-darkest;
+      border-color: $primary-darkest;
+    }
+
+    &:focus,
+    &:active {
+      border-color: $primary-darkest;
+      background-color: $primary-darkest;
+      outline: solid $primary-darker;
+      outline-offset: 3px;
+    }
+  }
+
+  .intf-btn-ellipsis span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .ant-btn-default:enabled {
+    &:hover {
+      background-color: $primary-lightest;
+    }
+
+    &:focus,
+    &:active {
+      color: $white;
+      background-color: $primary-darkest;
+      border-color: $primary-darkest;
+
+      i {
+        color: $white;
+      }
+    }
+  }
+
+  .ant-btn-default:disabled {
+    i {
+      color: $gray;
+    }
+  }
+
+  .ant-btn-link:enabled,
+  .ant-btn-link {
+    color: $primary;
+
+    &:hover {
+      color: $primary-darkest;
+      text-decoration: underline;
+
+      i {
+        color: $primary;
+      }
+    }
+
+    &:focus,
+    &:active {
+      outline: solid $primary-darker;
+      outline-offset: 3px;
+    }
+  }
+
+  .ant-btn-danger:enabled {
+    &:focus,
+    &:active {
+      outline: solid $red-darker;
+      outline-offset: 3px;
+    }
+  }
+
+  .ant-btn > i,
+  .ant-btn > span {
+    transition: none;
+  }
+
+  .ant-btn.btn-red {
+    color: $red;
+
+    i {
+      color: $red;
+    }
+
+    &:hover {
+      color: $red;
+
+      i {
+        color: $red-darker;
+      }
+    }
+  }
+}
+
+//mat themes
+
+// Buttons
+// 'warn' button styles are deprecated, 'secondary' should be used instead
+.mat-button-base {
+  &.mat-flat-button, &.mat-stroked-button, &.mat-button {
+    border-radius: $border-size;
+    height: 36px;
+    padding: 10px 16px;
+    line-height: 1.1;
+    font-size: 16px;
+
+    &.mat-small {
+      height: 30px;
+      padding: 3px 10px;
+      line-height: 1.2;
+    }
+
+    &.mat-large {
+      height: 42px;
+      padding: 8px 20px;
+      line-height: 1.6;
+    }
+  }
+
+  &.mat-stroked-button {
+    background-color: $white;
+
+    &.mat-accent {
+      border: $border-size/2 solid $primary;
+
+      &:hover:not(:focus) {
+        color: $white;
+        background-color: $primary;
+      }
+    }
+
+    &.mat-secondary {
+      border: $border-size/2 solid $secondary;
+      color: $secondary;
+
+      &:hover:not(:focus) {
+        color: $white;
+        background-color: $secondary;
+      }
+    }
+
+    &.mat-warn {
+      border: $border-size/2 solid $red;
+      color: $red;
+
+      &:hover:not(:focus) {
+        color: $white;
+        background-color: $red;
+      }
+    }
+  }
+
+  &.mat-flat-button {
+    color: $white;
+
+    &.mat-secondary {
+      background-color: $secondary;
+
+      &:hover:not(:focus) {
+        background-color: $secondary-darker;
+      }
+    }
+
+    &.mat-accent {
+      &:hover:not(:focus) {
+        background-color: $primary-darker;
+      }
+    }
+
+    &.mat-warn {
+      &:hover:not(:focus) {
+        background-color: $red-darker;
+      }
+    }
+  }
+
+  &.mat-button {
+    &.mat-secondary {
+      color: $secondary;
+
+      &:hover:not(:focus) {
+        text-underline-position: under;
+        color: $secondary-darker;
+        text-decoration: underline solid $secondary-darker $border-size + 1;
+        background-color: $secondary-lightest;
+      }
+    }
+
+    &.mat-accent {
+      color: $primary;
+
+      &:hover:not(:focus) {
+        text-underline-position: under;
+        color: $primary-darker;
+        text-decoration: underline solid $primary-darker $border-size + 1;
+        background-color: $primary-background;
+      }
+    }
+
+    &.mat-warn {
+      color: $red;
+
+      &:hover:not(:focus) {
+        text-underline-position: under;
+        color: $red-darker;
+        text-decoration: underline solid $red-darker $border-size + 1;
+        background-color: $red-lightest;
+      }
+    }
+
+  }
+
+  &:focus {
+    outline-width: $border-size;
+    outline-offset: $border-size;
+    opacity: 1;
+
+    &.mat-stroked-button, &.mat-flat-button {
+      color: $white;
+
+      &.mat-accent, .mat-icon-button {
+        background-color: $primary-darker;
+        outline: solid $primary-darker;
+      }
+
+      &.mat-secondary {
+        background-color: $secondary-darker;
+        outline: solid $secondary-darker;
+      }
+
+      &.mat-warn {
+        background-color: $red-darker;
+        outline: solid $red-darker;
+      }
+    }
+
+    &.mat-button {
+      text-underline-position: under;
+      color: $white;
+      text-decoration: underline solid $white $border-size + 1;
+
+      &.mat-secondary {
+        background-color: $secondary-darker;
+      }
+
+      &.mat-accent {
+        background-color: $primary-darker;
+      }
+
+      &.mat-warn {
+        background-color: $red-darker;
+      }
+    }
+
+    &.mat-icon-button, &.mat-icon-button &.cdk-keyboard-focused {
+      background: transparent !important;
+      &.mat-accent, .mat-icon-button {
+        outline: solid $primary-darker;
+      }
+
+      &.mat-secondary {
+        outline: solid $secondary-darker;
+      }
+
+      &.mat-warn {
+        outline: solid $red-darker;
+      }
+    }
+  }
+}

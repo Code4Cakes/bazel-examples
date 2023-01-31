@@ -1,0 +1,36 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+
+ng_module(
+    name = "auth",
+    srcs = ["authentication.resolver.service.ts"],
+    module_name = "@intf/auth",
+    deps = [
+        "//projects/medicine-cabinet/v2/providers",
+        "@npm//@angular/core",
+        "@npm//@angular/router",
+    ],
+)
+
+ts_library(
+    name = "tests",
+    srcs = ["authentication.resolver.spec.ts"],
+    deps = [
+        ":auth",
+        "//packages/environments:service",
+        "//projects/medicine-cabinet/v2/providers",
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+        "@npm//@angular/router",
+        "@npm//@types/jasmine",
+    ],
+)
+
+jest_test(
+    name = "test",
+    testonly = 1,
+    data = [":tests"],
+)

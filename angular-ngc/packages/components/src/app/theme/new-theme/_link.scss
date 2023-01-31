@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'typography';
+
+@mixin make-theme-link() {
+  a {
+    color: $primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../colors/colors';
+
+.a11y-offscreen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.skip-to-main {
+  left: 45%;
+  position: absolute;
+  top: -200px;
+  z-index: 900;
+  &:focus {
+    top: 15px;
+  }
+}
+
+a:focus {
+  outline: solid $color-primary;
+  outline-offset: 2px;
+}

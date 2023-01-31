@@ -1,0 +1,16 @@
+@import '../theme/new-theme/intf-theme';
+
+.intf-breadcrumbs-container {
+  display: flex;
+}
+
+.intf-breadcrumb {
+  font-size: $font-size-small;
+  color: $primary;
+}
+
+.breadcrumb-icon {
+  font-size: $font-size-micro;
+  padding: 0 6px;
+  width: unset;
+}

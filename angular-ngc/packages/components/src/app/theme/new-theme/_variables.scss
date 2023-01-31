@@ -1,0 +1,116 @@
+// DEPRECATED IN FAVOR OF DESIGN TOKENS DIRECTLY FROM AXIOM
+// './axiom/styles/variables'
+
+// Colors
+$navy: #414d61;
+$primary-darkest: #135073;
+$primary-darker: #175c84;
+$primary: #2577a6;
+$primary-lighter: #6ab2d9;
+$primary-lightest: #d2e8f4;
+$primary-background: #f1f6f9;
+$secondary-darker: #8b2504;
+$secondary: #db3c06;
+$secondary-lighter: #fdc3af;
+$secondary-lightest: #fef0eb;
+$green-darkest: #004037;
+$green-darker: #005f52;
+$green: #007f6d;
+$green-lighter: #99ccc5;
+$green-lightest: #f2f7f6;
+$purple-darkest: #403351;
+$purple-darker: #5f4c79;
+$purple: #7e64a1;
+$purple-lighter: #ccc1d9;
+$purple-lightest: #f6f5f7;
+$red-darkest: #520016;
+$red-darker: #8f0026;
+$red: #eb003f;
+$red-lighter: #ffc2d2;
+$red-lightest: #fff6f8;
+$gray-darkest: #272727;
+$gray-darker: #5c5c5c;
+$gray: #adadad;
+$gray-lighter: #dddddd;
+$gray-lightest: #f5f5f5;
+$white-darkest: #dddddd;
+$white-darker: #eeeeee;
+$white: #ffffff;
+$white-lightest: #cfd9e0;
+$yellow-darkest: #5a390c;
+$yellow-darker: #a5680d;
+$yellow: #eb9a23;
+$yellow-lighter: #ffcc80;
+$yellow-lightest: #fff5eb;
+$coral: #f05d5e;
+$coral-lighter: #fce3df;
+$black: #000000;
+
+// Spacers
+$spacers: (
+  'none': 0 !important,
+  'tiny': 4px,
+  'smaller': 8px,
+  'small': 12px,
+  'medium': 16px,
+  'regular': 20px,
+  'large': 24px,
+  'larger': 28px,
+  'largest': 32px,
+  'huge': 40px,
+  'jumbo': 80px,
+);
+
+$positions: (
+  '': '',
+  '-top': 't-',
+  '-right': 'r-',
+  '-bottom': 'b-',
+  '-left': 'l-',
+);
+$spacer-none: map-get($spacers, 'none');
+$spacer-tiny: map-get($spacers, 'tiny');
+$spacer-smaller: map-get($spacers, 'smaller');
+$spacer-small: map-get($spacers, 'small');
+$spacer-medium: map-get($spacers, 'medium');
+$spacer-regular: map-get($spacers, 'regular');
+$spacer-large: map-get($spacers, 'large');
+$spacer-larger: map-get($spacers, 'larger');
+$spacer-largest: map-get($spacers, 'largest');
+$spacer-huge: map-get($spacers, 'huge');
+$spacer-jumbo: map-get($spacers, 'jumbo');
+
+// Typography
+$font-size-massive: 42px;
+$font-size-jumbo: 37px;
+$font-size-huge: 31px;
+$font-size-larger: 22px;
+$font-size-large: 20px;
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-tiny: 12px;
+$font-size-micro: 10px;
+
+$line-height-jumbo: 55px;
+$line-height-huge: 46px;
+$line-height-larger: 33px;
+$line-height-large: 27px;
+$line-height-base: 24px;
+$line-height-small: 19px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+$default-font-family: Roboto, sans-serif;
+
+// Grid
+// $grid-xs: 576px;
+$grid-sm: 640px;
+$grid-md: 940px;
+$grid-lg: 1170px;
+$grid-xl: 1440px;
+// $grid-xxl: 1600px;
+
+// Material
+$border-size: 2px;

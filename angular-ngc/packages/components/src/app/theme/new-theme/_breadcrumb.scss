@@ -1,0 +1,18 @@
+@import 'variables';
+
+@mixin make-theme-breadcrumb() {
+
+  .intf-breadcrumbs {
+    a {
+      font-weight: normal;
+    }
+
+    i {
+      font-weight: bold;
+    }
+  }
+
+  .ant-breadcrumb-link a {
+    color: $primary-lighter;
+  }
+}

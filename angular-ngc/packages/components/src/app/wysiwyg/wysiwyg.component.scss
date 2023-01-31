@@ -1,0 +1,102 @@
+@import './axiom/styles/variables';
+$spacer-small: 4px;
+
+@mixin tinymce-button-states {
+  box-sizing: border-box;
+  &:hover, &:focus {
+    border: 2px solid $color-background-primary;
+    background: none;
+    svg {
+      fill: $color-background-primary; 
+    }
+  }
+
+  &.tox-tbtn--enabled {
+    border: 1px solid $color-background-primary;
+    background-color: $color-background-chip-primary;
+    svg { 
+      background-color: $color-background-primary;
+      fill: $color-white
+    }
+  }
+}
+
+.editor-container {
+  margin-bottom: 20px;
+
+  .description {
+    margin-bottom: $spacer-small;
+  }
+
+  .editor {
+    &:hover {
+      outline: 2px solid $color-background-primary;
+    }
+
+    ::ng-deep .tox.tox-tinymce {
+      &.focused {
+        outline: 2px solid $color-background-primary;
+      }
+
+      &.tox-tinymce--disabled {
+        .tox-toolbar__primary, iframe, .tox-statusbar {
+          outline: none;
+          background-color: $color-background-disabled;
+        }
+
+        .tox-editor-header {
+          border-bottom: 1px solid $color-black;
+        }
+      }
+
+      .tox-toolbar__primary, .tox-toolbar__overflow {
+        background-color: $color-background-chip-primary;
+
+        .tox-tbtn {
+          @include tinymce-button-states;
+        }
+
+      }
+
+      &:focus-within {
+        outline: 2px solid $color-background-primary;
+      }
+    
+    }
+
+    &.ng-invalid, &.error {
+      outline: 1px solid $color-error;
+
+      ::ng-deep .tox.tox-tinymce.focused {
+        outline: 2px solid $color-error;
+      }
+    }
+  }
+
+  .validation-container {
+    margin-bottom: $spacer-small;
+    display: flex;
+    justify-content: space-between;
+
+    &.flex-direction-row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .character-count {
+      font-size: $font-size-200;
+      color: $color-gray-7;
+    }
+
+    .mat-error {
+      margin-top: $spacer-small;
+    }
+  }
+}
+
+::ng-deep .tox.tox-tinymce-aux {
+  .tox-toolbar__overflow {
+    ::ng-deep .tox-tbtn {
+      @include tinymce-button-states;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "@ngc-example/lib-a",
+  "name": "@intf/lib-a",
   "private": true,
   "dependencies": {
-    "@ngc-example/common": "workspace:*"
+    "@intf/common": "workspace:*"
   }
 }

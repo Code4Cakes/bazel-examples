@@ -1,0 +1,64 @@
+@import './axiom/styles/variables';
+
+@mixin make-theme-tab {
+  mat-tab-group.labels-no-min-width .mat-tab-label {
+    min-width: unset;
+  }
+
+  .mat-tab-header {
+    border-bottom: none;
+  }
+
+  .mat-tab-label {
+    border-bottom: 2px solid $color-blue-50;
+    margin: 0;
+    color: $color-black;
+    text-transform: uppercase;
+    opacity: 1;
+
+    span .mat-badge-content {
+      background-color: $color-background-badge-default;
+    }
+  }
+
+  .mat-tab-label.mat-tab-link {
+    color: $color-black;
+  }
+
+  .mat-tab-label.mat-tab-label-active:not(.mat-tab-disabled) {
+    border-top: 2px solid $color-blue-50;
+    border-right: 2px solid $color-blue-50;
+    border-left: 2px solid $color-blue-50;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    color: $color-black;
+  }
+
+  .mat-tab-label[role='tab']:hover {
+    color: $color-blue-30;
+    outline: 0;
+
+    &:not(.mat-tab-disabled) {
+      background-color: $color-blue-90;
+      span .mat-badge-content {
+        background-color: $color-background-badge-primary;
+      }
+    }
+  }
+
+  //styles for left and right disabled bumper tabs
+  .mat-tab-header {
+    .mat-tab-label.mat-tab-disabled:first-of-type {
+      min-width: 0;
+      max-width: 15px;
+    }
+
+    .mat-tab-disabled:last-of-type {
+      flex-grow: 2;
+    }
+  }
+
+  .mat-ink-bar {
+    display: none;
+  }
+}

@@ -1,0 +1,114 @@
+@import 'variables';
+
+@mixin make-theme-table {
+  table.axiom-data-table {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    line-height: $line-height-small;
+    width: 100%;
+
+    td.mat-cell {
+      padding-bottom: $spacer-tiny;
+      padding-top: $spacer-tiny;
+    }
+
+    th {
+      background-color: $primary-background;
+      color: $color-gray-10;
+      font-size: $font-size-small;
+      font-weight: $font-weight-medium;
+
+      &.action-col-single-button {
+        padding-left: $spacer-small;
+      }
+    }
+
+    td.mat-cell:first-of-type,
+    td.mat-footer-cell:first-of-type,
+    th.mat-header-cell:first-of-type {
+      padding-left: $spacer-medium;
+    }
+
+    td.mat-cell:last-of-type,
+    td.mat-footer-cell:last-of-type,
+    th.mat-header-cell:last-of-type {
+      padding-right: $spacer-medium;
+    }
+
+    tr.mat-header-row {
+      height: 56px;
+    }
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+      background-color: $secondary;
+    }
+
+    tr.mat-row {
+      height: 52px;
+    }
+
+    tr.mat-row:hover {
+      background-color: $secondary-lightest;
+      transition: background-color 0.2s;
+    }
+
+    .link {
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  table.files-table {
+    tr.mat-header-row,
+    tr.mat-row {
+      height: 32px;
+    }
+
+    .file-table-header {
+      background-color: $primary-background;
+
+      .mat-header-cell {
+        color: rgba(0, 0, 0, 0.87);
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    .checkbox-column {
+      width: 64px;
+      flex-grow: 0;
+    }
+  }
+
+  .ant-pagination-item-active {
+    border-color: $primary;
+  }
+
+  .ant-pagination-item-active {
+    border-color: $primary;
+  }
+
+  .ant-pagination .ant-pagination-item-link {
+    display: list-item;
+  }
+
+  .ant-pagination-item-active button {
+    color: $white;
+  }
+
+  th.ant-table-column-has-sorters {
+    .ant-table-header-column {
+      flex: 1;
+      display: flex;
+
+      .ant-table-column-sorters {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        .ant-table-column-sorter-inner.ant-table-column-sorter-inner-full {
+          color: $gray-darker;
+        }
+      }
+    }
+  }
+}

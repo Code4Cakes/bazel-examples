@@ -1,0 +1,31 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+
+sass_library(
+    name = "sass_lib",
+    srcs = [
+        "//packages/components/src/app/theme:theme-scss",
+    ],
+)
+
+sass_binary(
+    name = "intf-alert-scss",
+    src = "intf-alert.component.scss",
+    deps = [":sass_lib"],
+)
+
+ng_module(
+    name = "intf-alert",
+    srcs = glob(["*.ts"]),
+    assets = glob(["*.html"]) + [
+        ":intf-alert-scss",
+    ],
+    module_name = "@intf/components/intf-alert",
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+        "@npm//@angular/material",
+    ],
+)

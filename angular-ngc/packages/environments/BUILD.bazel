@@ -1,0 +1,47 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+
+ts_library(
+    name = "environments",
+    srcs = [
+        "index.ts",
+        "src/environment.utils.ts",
+        "src/legacy.d.ts",
+    ],
+    module_name = "@intf/environments",
+)
+
+ng_module(
+    name = "service",
+    srcs = [
+        "src/environment.interface.ts",
+        "src/environment.module.ts",
+        "src/environment.ts",
+    ],
+    deps = [
+        ":environments",
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+    ],
+)
+
+ts_library(
+    name = "tests",
+    testonly = 1,
+    srcs = glob(["**/*.spec.ts"]),
+    deps = [
+        ":environments",
+        ":service",
+        "@npm//@angular/core",
+        "@npm//@types/jasmine",
+    ],
+)
+
+jest_test(
+    name = "test",
+    testonly = 1,
+    data = [":tests"],
+)

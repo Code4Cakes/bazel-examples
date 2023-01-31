@@ -1,0 +1,25 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
+
+ng_module(
+    name = "mat-theme",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    assets = [":theme_component_scss"],
+    module_name = "@intf/components/mat-theme",
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+        "@npm//@angular/forms",
+    ],
+)
+
+sass_binary(
+    name = "theme_component_scss",
+    src = "theme.component.scss",
+    deps = ["//packages/components/src/app/theme:theme-scss"],
+)

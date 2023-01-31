@@ -1,0 +1,39 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+
+COMMON_DEPS = [
+    "@npm//@angular/common",
+    "@npm//@angular/core",
+    "@npm//ng-zorro-antd",
+    "//packages/components/src/app/theme",
+]
+
+ng_module(
+    name = "intf-empty",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    module_name = "@intf/components/intf-empty",
+    deps = COMMON_DEPS,
+)
+
+ts_library(
+    name = "tests",
+    testonly = 1,
+    srcs = glob(["*.spec.ts"]),
+    deps = COMMON_DEPS + [
+        ":intf-empty",
+        "@npm//@types/jasmine",
+        "@npm//axe-core",
+    ],
+)
+
+jest_test(
+    name = "test",
+    testonly = 1,
+    data = [":tests"],
+)

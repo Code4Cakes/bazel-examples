@@ -1,0 +1,55 @@
+@import 'variables';
+
+@mixin make-theme-form() {
+  .ant-form-item-label label {
+    font-family: $default-font-family;
+    font-weight: $font-weight-regular;
+  }
+
+  .ant-form-vertical {
+    .ant-form-item-required {
+      display: flex;
+    }
+  }
+
+  .ant-form-item-required::before {
+    display: none;
+    margin-right: 0;
+    content: none;
+  }
+
+  .ant-form-item-required::after,
+  .ant-form-item-label > label.ant-form-item-required::after {
+    display: inline-block;
+    margin-left: $spacer-tiny;
+    color: $red;
+    font-size: $font-size-small;
+    font-family: $default-font-family;
+    content: '*' !important;
+  }
+
+  .ant-form-item-label.form-label-big label {
+    font-weight: $font-weight-medium;
+    font-size: $font-size-base;
+  }
+
+  label.form-label-bigger,
+  .ant-form-item-label.form-label-bigger label {
+    font-weight: $font-weight-medium;
+    font-size: $font-size-large;
+  }
+}
+
+.char-count {
+  font-size: 11px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+::ng-deep .char-count-wrapper {
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+

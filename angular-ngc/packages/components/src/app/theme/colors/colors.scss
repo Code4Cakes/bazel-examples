@@ -1,0 +1,133 @@
+//==============================================================================
+// Color palette
+//==============================================================================
+
+$intf-purple: #543872;
+$intf-teal: #04668d;
+$intf-blue: #4092c2;
+$intf-green: #22cbaa;
+$intf-coral: #ef5d5e;
+$intf-gray: #adadad;
+$intf-tabber-border: #d3d3d3;
+$palette-colors: ('purple', 'teal', 'blue', 'green', 'coral', 'gray');
+$palette-values: (
+  $intf-purple,
+  $intf-teal,
+  $intf-blue,
+  $intf-green,
+  $intf-coral,
+  $intf-gray
+);
+
+$color-primary-darkest: #135073;
+$color-primary-dark: #175c84;
+$color-primary: #277cad;
+$color-primary-lighter: #6ab2d9;
+$color-primary-lightest: #d2e8f4;
+$color-list-primary: (
+  $color-primary-darkest,
+  $color-primary-dark,
+  $color-primary,
+  $color-primary-lighter,
+  $color-primary-lightest
+);
+
+$color-secondary-darkest: #0c2340;
+$color-secondary-darker: #12345e;
+$color-secondary-dark: #12345e;
+$color-secondary: #214673;
+$color-secondary-lighter: #678fbf;
+$color-secondary-lightest: #e1eaf5;
+$color-list-secondary: (
+  $color-secondary-darkest,
+  $color-secondary-darker,
+  $color-secondary-dark,
+  $color-secondary,
+  $color-secondary-lighter,
+  $color-secondary-lightest
+);
+
+$color-tertiary-darkest: #095f5c;
+$color-tertiary-dark: #0a6f6c;
+$color-tertiary: #0c837f;
+$color-tertiary-lighter: #56c9c4;
+$color-tertiary-lightest: #d0efee;
+$color-list-tertiary: (
+  $color-tertiary-darkest,
+  $color-tertiary-dark,
+  $color-tertiary,
+  $color-tertiary-lighter,
+  $color-tertiary-lightest
+);
+
+$color-info-darkest: #5c4877;
+$color-info-dark: #634d81;
+$color-info: #7f66a1;
+$color-info-lighter: #ab9ac3;
+$color-info-lightest: #eae6f0;
+$color-list-info: (
+  $color-info-darkest,
+  $color-info-dark,
+  $color-info,
+  $color-info-lighter,
+  $color-info-lightest
+);
+
+$color-danger-darkest: #9e3637;
+$color-danger-dark: #b03d3e;
+$color-danger: #c54546;
+$color-danger-lighter: #ffa0a1;
+$color-danger-lightest: #ffe7e7;
+$color-list-danger: (
+  $color-danger-darkest,
+  $color-danger-dark,
+  $color-danger,
+  $color-danger-lighter,
+  $color-danger-lightest
+);
+
+$color-default-darkest: #404e5a;
+$color-default-dark: #4f606f;
+$color-default: #617688;
+$color-default-lighter: #adbac5;
+$color-default-lightest: #cfd9e0;
+$color-list-default: (
+  $color-default-darkest,
+  $color-default-dark,
+  $color-default,
+  $color-default-lighter,
+  $color-default-lightest
+);
+
+$color-black: #000000;
+$color-black-light: #333333;
+$color-black-lighter: #5c5c5c;
+$color-black-lightest: #858585;
+$color-list-black: (
+  $color-black,
+  $color-black-light,
+  $color-black-lighter,
+  $color-black-lightest
+);
+
+$color-gray-darker: #5c5c5c;
+$color-gray-dark: #858585;
+$color-gray: #adadad;
+$color-gray-light: #cccccc;
+$color-list-gray: (
+  $color-gray-darker,
+  $color-gray-dark,
+  $color-gray,
+  $color-gray-light
+);
+
+$color-white-darkest: #dddddd;
+$color-white-darker: #eeeeee;
+$color-white-dark: #f5f5f5;
+$color-white: #ffffff;
+$color-list-white: (
+  $color-white-darkest,
+  $color-white-darker,
+  $color-white-dark,
+  $color-white
+);

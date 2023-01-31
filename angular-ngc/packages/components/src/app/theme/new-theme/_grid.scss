@@ -1,0 +1,118 @@
+@import 'variables';
+
+@mixin makeGridUtility($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin make-theme-grid {
+  $legacy-sidebar: 220px;
+  $legacy-sidebar-breakpoint: 990px;
+
+  .grid-container {
+    margin: auto;
+
+    @include makeGridUtility($grid-sm) {
+      width: $grid-sm;
+    }
+
+    @include makeGridUtility($grid-md) {
+      width: $grid-md;
+    }
+
+    //TODO: remove legacy sidebar hack when sidebar gets refactored
+    @include makeGridUtility($legacy-sidebar-breakpoint) {
+      width: calc(#{$grid-md} - #{$legacy-sidebar});
+    }
+
+    @include makeGridUtility($grid-lg) {
+      width: calc(#{$grid-lg} - #{$legacy-sidebar});
+    }
+
+    @include makeGridUtility($grid-xl) {
+      width: calc(#{$grid-xl} - #{$legacy-sidebar});
+    }
+  }
+
+  .ant-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ant-col-1,
+  .ant-col-xs-1,
+  .ant-col-sm-1,
+  .ant-col-md-1,
+  .ant-col-lg-1,
+  .ant-col-2,
+  .ant-col-xs-2,
+  .ant-col-sm-2,
+  .ant-col-md-2,
+  .ant-col-lg-2,
+  .ant-col-3,
+  .ant-col-xs-3,
+  .ant-col-sm-3,
+  .ant-col-md-3,
+  .ant-col-lg-3,
+  .ant-col-4,
+  .ant-col-xs-4,
+  .ant-col-sm-4,
+  .ant-col-md-4,
+  .ant-col-lg-4,
+  .ant-col-5,
+  .ant-col-xs-5,
+  .ant-col-sm-5,
+  .ant-col-md-5,
+  .ant-col-lg-5,
+  .ant-col-6,
+  .ant-col-xs-6,
+  .ant-col-sm-6,
+  .ant-col-md-6,
+  .ant-col-lg-6,
+  .ant-col-7,
+  .ant-col-xs-7,
+  .ant-col-sm-7,
+  .ant-col-md-7,
+  .ant-col-lg-7,
+  .ant-col-8,
+  .ant-col-xs-8,
+  .ant-col-sm-8,
+  .ant-col-md-8,
+  .ant-col-lg-8,
+  .ant-col-9,
+  .ant-col-xs-9,
+  .ant-col-sm-9,
+  .ant-col-md-9,
+  .ant-col-lg-9,
+  .ant-col-10,
+  .ant-col-xs-10,
+  .ant-col-sm-10,
+  .ant-col-md-10,
+  .ant-col-lg-10,
+  .ant-col-11,
+  .ant-col-xs-11,
+  .ant-col-sm-11,
+  .ant-col-md-11,
+  .ant-col-lg-11,
+  .ant-col-12,
+  .ant-col-xs-12,
+  .ant-col-sm-12,
+  .ant-col-md-12,
+  .ant-col-lg-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .flex-2 {
+    flex: 2;
+  }
+
+  .display-flex {
+    display: flex;
+  }
+}

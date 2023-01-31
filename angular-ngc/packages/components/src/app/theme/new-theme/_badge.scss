@@ -1,0 +1,12 @@
+@import 'variables';
+
+@mixin make-theme-badge() {
+  .ant-badge-count {
+    background-color: $primary;
+  }
+
+  .mat-badge-medium.mat-badge-above.badge-text-level .mat-badge-content {
+    top: 0px;
+    right: -26px;
+  }
+}

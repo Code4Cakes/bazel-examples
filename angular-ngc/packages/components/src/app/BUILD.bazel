@@ -1,0 +1,15 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+
+ng_module(
+    name = "app",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    deps = [
+        "@npm//@angular/core",
+        "@npm//@angular/platform-browser",
+    ],
+)

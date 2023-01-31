@@ -1,0 +1,35 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("//tools/testing:index.bzl", "jest_test")
+
+ng_module(
+    name = "intf-table-density-toggler",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    module_name = "@intf/components/intf-table/intf-table-density-toggler",
+    deps = [
+        "@npm//@angular/common",
+        "@npm//@angular/core",
+    ],
+)
+
+ts_library(
+    name = "tests",
+    testonly = 1,
+    srcs = glob(["*.spec.ts"]),
+    deps = [
+        ":intf-table-density-toggler",
+        "@npm//@angular/core",
+        "@npm//@types/jasmine",
+    ],
+)
+
+jest_test(
+    name = "test",
+    testonly = 1,
+    data = [":tests"],
+)

@@ -1,0 +1,28 @@
+@mixin make-theme-search-bar() {
+  .search-bar {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+
+    .mat-flat-button {
+      margin: 0;
+      border-radius: 2px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+
+    .mat-form-field-wrapper {
+      margin-top: 0.25em;
+      margin-bottom: 0;
+    }
+
+    .mat-form-field-outline-start {
+      border-radius: 2px;
+    }
+
+    .mat-form-field-outline-end {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+}

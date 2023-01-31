@@ -1,0 +1,58 @@
+package(default_visibility = ["//:__subpackages__"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+load("@npm//@bazel/typescript:index.bzl", "ts_library")
+load("@npm//@angular/bazel:index.bzl", "ng_module")
+load("//tools/testing:index.bzl", "jest_test")
+
+COMMON_DEPS = [
+    "@npm//@angular/common",
+    "@npm//@angular/core",
+    "@npm//@angular/material",
+    "@npm//@angular/router",
+    "@npm//@tinymce/tinymce-angular",
+    "@npm//@angular/platform-browser",
+    "@npm//@angular/forms"
+]
+
+sass_library(
+    name = "sass_lib",
+    srcs = [
+        "//packages/components/src/app/theme:theme-scss",
+        "wysiwyg.css",
+    ],
+)
+
+sass_binary(
+    name = "styles",
+    src = "wysiwyg.component.scss",
+    deps = [":sass_lib"],
+)
+
+ng_module(
+    name = "wysiwyg",
+    srcs = glob(
+        ["*.ts"],
+        exclude = ["*.spec.ts"],
+    ),
+    assets = [":styles"],
+    module_name = "@intf/components/wysiwyg",
+    deps = COMMON_DEPS
+)
+
+ts_library(
+    name = "tests",
+    testonly = 1,
+    srcs = glob(["*.spec.ts"]),
+    deps = COMMON_DEPS + [
+        ":wysiwyg",
+        "@npm//@types/jasmine",
+        "@npm//axe-core",
+    ],
+)
+
+jest_test(
+    name = "test",
+    testonly = 1,
+    data = [":tests"],
+)

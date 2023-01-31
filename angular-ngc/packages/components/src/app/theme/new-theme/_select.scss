@@ -1,0 +1,31 @@
+@import 'variables.scss';
+
+@mixin make-theme-select {
+  .ant-select-selection {
+    transition: none;
+  }
+
+  .ant-select,
+  .ant-input {
+    color: $gray-darkest;
+  }
+
+  .mat-form-field-appearance-outline {
+    border-color: #616161;
+    .mat-form-field-outline-start {
+      border-radius: 2px 0px 0px 2px;
+    }
+    .mat-form-field-outline-end {
+      border-radius: 0px 2px 2px 0px;
+    }
+  }
+
+  .mat-form-field-appearance-outline:not(.mat-form-field-invalid)
+    .mat-form-field-outline-thick
+    .mat-form-field-outline-start,
+  .mat-form-field-appearance-outline:not(.mat-form-field-invalid)
+    .mat-form-field-outline-thick
+    .mat-form-field-outline-end {
+    border-color: #2577a6;
+  }
+}

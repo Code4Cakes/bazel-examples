@@ -1,0 +1,137 @@
+@import 'variables';
+
+@mixin roboto-regular {
+  font-family: $default-font-family;
+  font-weight: $font-weight-regular;
+}
+
+@mixin roboto-medium {
+  font-family: $default-font-family;
+  font-weight: $font-weight-medium;
+}
+
+@mixin build-text-utility($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: 0;
+}
+
+@mixin body-tiny {
+  @include roboto-regular;
+  @include build-text-utility($font-size-tiny, $line-height-small);
+}
+
+@mixin body-small {
+  @include roboto-regular;
+  @include build-text-utility($font-size-small, $line-height-small);
+}
+
+@mixin body-medium {
+  @include roboto-regular;
+  @include build-text-utility($font-size-base, $line-height-base);
+}
+
+@mixin make-theme-typography {
+  h1,
+  .page-title {
+    @include roboto-medium;
+    color: $gray-darkest;
+    @include build-text-utility($font-size-jumbo, $line-height-jumbo);
+  }
+  .infographic {
+    @include roboto-medium;
+    color: $gray-darkest;
+    font-weight: $font-weight-bold;
+    @include build-text-utility($font-size-massive, $line-height-jumbo);
+  }
+
+  h2,
+  .section-header {
+    color: $gray-darkest;
+    @include roboto-medium;
+    @include build-text-utility($font-size-huge, $line-height-huge);
+  }
+
+  h3,
+  .sub-section-header {
+    color: $gray-darkest;
+    @include roboto-medium;
+    @include build-text-utility($font-size-larger, $line-height-larger);
+  }
+
+  h4,
+  .paragraph-header {
+    color: $gray-darkest;
+    @include roboto-medium;
+    @include build-text-utility($font-size-large, $line-height-large);
+  }
+
+  h5,
+  .sub-paragraph-header {
+    color: $gray-darkest;
+    @include roboto-medium;
+    @include build-text-utility($font-size-base, $line-height-base);
+  }
+
+  .label-small {
+    color: $color-gray-10;
+    @include roboto-medium;
+    @include build-text-utility($font-size-small, $line-height-base);
+  }
+
+  .body-medium {
+    color: $gray-darkest;
+    @include body-medium;
+  }
+
+  .body-small {
+    color: $gray-darkest;
+    @include body-small;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-justify {
+    text-align: justify;
+  }
+
+  .text-error {
+    color: $red;
+  }
+
+  .text-gray {
+    color: $gray;
+  }
+
+  .text-gray-lighter {
+    color: $gray-lighter;
+  }
+
+  .text-gray-darker {
+    color: $gray-darker;
+  }
+
+  .text-primary {
+    color: $primary;
+  }
+
+  .text-primary-darker {
+    color: $primary-darker;
+  }
+
+  .text-primary-darkest {
+    color: $primary-darkest;
+  }
+
+  // Axiom Styles
+
+  .axiom-gray-700 {
+    color: $color-gray-8;
+  }
+}
