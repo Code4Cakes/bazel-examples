@@ -4,8 +4,8 @@ export interface TodoStore {
 }
 
 export interface TodoPayload {
-  index?: number;
+  index?: number | null;
   done?: boolean;
-  value?: string;
+  value?: string | null;
   newValue?: string;
 }

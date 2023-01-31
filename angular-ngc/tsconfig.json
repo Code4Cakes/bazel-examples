@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": ["es2020", "dom"],
     "paths": {
-      "@ngc-example/*": ["packages/*"]
+      "@intf/*": ["packages/*"]
     }
   },
   "angularCompilerOptions": {

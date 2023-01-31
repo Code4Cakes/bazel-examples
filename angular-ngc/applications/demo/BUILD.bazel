@@ -9,9 +9,9 @@ npm_link_all_packages(name = "node_modules")
 ng_application(
     name = "demo",
     test_deps = [
-        ":node_modules/@ngc-example/common",
+        ":node_modules/@intf/common",
     ],
     deps = [
-        ":node_modules/@ngc-example/lib-a",
+        ":node_modules/@intf/lib-a",
     ],
 )

@@ -56,7 +56,7 @@ export class TodoComponent implements OnInit {
   todos: Observable<Array<TodoPayload>>;
   loading: Observable<boolean>;
   todo = new FormControl('Sample Todo');
-  todoListView = [];
+  todoListView: any = [];
 
   constructor(private store: Store<{ todos: TodoStore }>) {}
 
@@ -96,7 +96,7 @@ export class TodoComponent implements OnInit {
     const { value } = todo;
     const action: ActionWithPayload<TodoPayload> = {
       type: actions.CREATE_TODO,
-      payload: value,
+      payload: { value },
     };
 
     store.dispatch(action);
